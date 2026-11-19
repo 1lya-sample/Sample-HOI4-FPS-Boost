@@ -1,0 +1,27 @@
+# Logs
+logs/
+*.log
+
+# Build output (rebuild with dev\build.cmd)
+bin/*.exe
+bin/*.dll
+bin/*.exp
+bin/*.lib
+dev/build/
+*.obj
+*.pdb
+
+# Downloaded third-party source (dev\build.cmd clones it)
+dev/third_party/
+
+# Trace analysis output
+dev/analysis/*.json
+dev/analysis/*.txt
+*.etl
+__pycache__/
+
+# Editors / OS
+.vs/
+.vscode/
+Thumbs.db
+desktop.ini
