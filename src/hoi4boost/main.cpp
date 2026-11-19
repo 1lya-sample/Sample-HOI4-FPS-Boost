@@ -35,7 +35,7 @@ static void InitPaths(HMODULE self)
     GetModuleFileNameW(self, dir, MAX_PATH);
     if (wchar_t* s = wcsrchr(dir, L'\\')) *s = 0;
     swprintf_s(g_ini, L"%s\\hoi4boost.ini", dir);
-    swprintf_s(logs, L"%s\\..\\logs", dir);
+    swprintf_s(logs, L"%s\\logs", dir);
     CreateDirectoryW(logs, nullptr);
     swprintf_s(g_log, L"%s\\boost.log", logs);
 }

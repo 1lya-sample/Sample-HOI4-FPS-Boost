@@ -1,6 +1,6 @@
 @echo off
 if "%~1"=="" (
-    start "" "%~dp0bin\launcher.exe"
+    start "" "%~dp0dist\launcher.exe"
     exit /b 0
 )
-"%~dp0bin\launcher.exe" %*
+"%~dp0dist\launcher.exe" %*

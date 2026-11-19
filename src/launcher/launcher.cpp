@@ -116,7 +116,7 @@ int WINAPI wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)
     GetModuleFileNameW(nullptr, g_dir, MAX_PATH);
     if (wchar_t* s = wcsrchr(g_dir, L'\\')) *s = 0;
     wchar_t logs[MAX_PATH];
-    swprintf_s(logs, L"%s\\..\\logs", g_dir);
+    swprintf_s(logs, L"%s\\logs", g_dir);
     CreateDirectoryW(logs, nullptr);
     swprintf_s(g_log, L"%s\\boost.log", logs);
     swprintf_s(g_dll, L"%s\\hoi4boost.dll", g_dir);
@@ -159,13 +159,13 @@ int WINAPI wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)
         if (r == BoostResult::Loaded)
             wcscpy_s(text, L"Sample HOI4 FPS Boost is now connected to the running game.\n\n"
                            L"The optimizations are already working; space-to-pause in multiplayer starts working after the next save is loaded.\n"
-                           L"Details: logs\\boost.log");
+                           L"Details: dist\\logs\\boost.log");
         else if (r == BoostResult::AlreadyLoaded)
             wcscpy_s(text, L"Sample HOI4 FPS Boost is already running in this game.");
         else if (busy)
             wcscpy_s(text, L"Another launcher is already connecting to the game.");
         else
-            swprintf_s(text, L"Could not connect to the game: %hs.\n\nDetails: logs\\boost.log", why);
+            swprintf_s(text, L"Could not connect to the game: %hs.\n\nDetails: dist\\logs\\boost.log", why);
         MessageBoxW(nullptr, text, L"Sample HOI4 FPS Boost",
                     MB_OK | MB_SETFOREGROUND | MB_TOPMOST | (r == BoostResult::Failed ? MB_ICONWARNING : MB_ICONINFORMATION));
     }

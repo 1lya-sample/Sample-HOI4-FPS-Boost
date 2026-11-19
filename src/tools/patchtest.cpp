@@ -8,7 +8,7 @@ int wmain(int argc, wchar_t** argv)
     wchar_t dll[MAX_PATH];
     GetModuleFileNameW(nullptr, dll, MAX_PATH);
     if (wchar_t* s = wcsrchr(dll, L'\\')) *s = 0;
-    wcscat_s(dll, L"\\..\\..\\bin\\hoi4boost.dll");
+    wcscat_s(dll, L"\\..\\..\\dist\\hoi4boost.dll");
 
     HMODULE boost = LoadLibraryW(dll);
     if (!boost) { wprintf(L"cannot load %ls (error %lu)\n", dll, GetLastError()); return 2; }

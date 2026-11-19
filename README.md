@@ -27,8 +27,8 @@ with the frame pacing patch crashes the game (with it, that patch is skipped aut
 
 ## How it works
 
-1. `bin\launcher.exe` (no window) starts the game through Steam (or runs Steam's command), waits for
-   `hoi4.exe` and 1.5 seconds after it starts loads `bin\hoi4boost.dll` into it.
+1. `dist\launcher.exe` (no window) starts the game through Steam (or runs Steam's command), waits for
+   `hoi4.exe` and 1.5 seconds after it starts loads `dist\hoi4boost.dll` into it.
 2. `hoi4boost.dll` runs inside the game and does the rest:
 
 | What | Effect |
@@ -50,13 +50,13 @@ game's other threads are suspended and only if none of them is executing the byt
 
 ## Log
 
-`logs\boost.log`: `[launcher]` lines come from the launcher, `[game]` lines from inside the game.
+`dist\logs\boost.log`: `[launcher]` lines come from the launcher, `[game]` lines from inside the game.
 After loading a save it should contain: `hoi4boost.dll loaded`, `mimalloc ... 4 of 4`, `applied` for
 all five patches, `adaptive-fps: ...` and `cpu: main thread ... pinned`.
 
 ## Settings
 
-File `bin\hoi4boost.ini`. It is read when the boost connects to the game, so restart the game after
+File `dist\hoi4boost.ini`. It is read when the boost connects to the game, so restart the game after
 editing it. `1` = on, `0` = off. Everything is on by default.
 
 ### `[memory]`
@@ -139,11 +139,11 @@ or in the system.
 ```
 hoi4_launch.cmd        launch
 LICENSE                MIT License
-bin\
+dist\
   launcher.exe         starts the game and loads hoi4boost.dll into it
   hoi4boost.dll        optimizations inside the game
   hoi4boost.ini        settings
-logs\boost.log         log (created automatically)
+  logs\boost.log       log (created automatically)
 src\
   hoi4boost\           the DLL
     main.cpp           entry point, log, settings

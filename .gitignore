@@ -3,10 +3,10 @@ logs/
 *.log
 
 # Build output (rebuild with dev\build.cmd)
-bin/*.exe
-bin/*.dll
-bin/*.exp
-bin/*.lib
+dist/*.exe
+dist/*.dll
+dist/*.exp
+dist/*.lib
 dev/build/
 *.obj
 *.pdb
