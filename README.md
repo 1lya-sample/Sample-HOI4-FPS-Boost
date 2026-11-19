@@ -1,3 +1,5 @@
+<img src="icon.jpg" />
+
 # Sample HOI4 FPS Boost
 
 Speeds up Hearts of Iron IV in the late game: higher FPS at high game speeds and less load on the
